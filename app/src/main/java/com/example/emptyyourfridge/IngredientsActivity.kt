@@ -39,12 +39,12 @@ class IngredientsActivity : AppCompatActivity() {
             }
 
             updateSelectedFoodsText()
-            // 추가적인 동작을 수행하려면 이 부분을 수정하세요.
+            // 추가 동작을 수행
         }
     }
 
     private fun updateSelectedFoodsText() {
-        val selectedFoodsText = "선택된 음식들: ${selectedFoodList.joinToString(", ")}"
+        val selectedFoodsText = "냉장고 속 음식: ${selectedFoodList.joinToString(", ")}"
         selectedFoodsTextView.text = selectedFoodsText
     }
 }
