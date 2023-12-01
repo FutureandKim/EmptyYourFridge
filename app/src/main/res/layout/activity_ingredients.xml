@@ -8,19 +8,21 @@
     tools:context=".IngredientsActivity">
 
 
-    <ListView
-        android:id="@+id/ingredientsListView"
-        android:layout_width="match_parent"
-        android:layout_height="550dp"
+    <GridView
+        android:id="@+id/ingredientsGridView"
+        android:layout_width="0dp"
+        android:layout_height="500dp"
         android:layout_weight="1"
+        android:columnWidth="100dp"
+        android:numColumns="2"
         android:choiceMode="multipleChoice"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/nextButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectedFoodsTextView"
-        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints" />
+
+
 
     <TextView
         android:id="@+id/selectedFoodsTextView"
