@@ -1,5 +1,6 @@
 package com.example.emptyyourfridge
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
@@ -13,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 class IngredientsActivity : AppCompatActivity() {
 
-    private val foodItems = arrayOf("계란", "콩나물", "두부", "햄", "양파", "감자")
+    private val foodItems = arrayOf("달걀", "콩나물", "두부", "햄", "양파", "감자", "고구마", "토마토", "참치", "배추")
     private val selectedFoodList = ArrayList<String>()
     private lateinit var selectedFoodsTextView: TextView
 
@@ -41,10 +42,27 @@ class IngredientsActivity : AppCompatActivity() {
             updateSelectedFoodsText()
             // 추가 동작을 수행
         }
+
+        val nextButton: Button = findViewById(R.id.nextButton)
+
+        nextButton.setOnClickListener{
+            moveToCategoryActivity()
+        }
     }
 
     private fun updateSelectedFoodsText() {
         val selectedFoodsText = "냉장고 속 음식: ${selectedFoodList.joinToString(", ")}"
         selectedFoodsTextView.text = selectedFoodsText
     }
+
+    private fun moveToCategoryActivity() {
+        val intent = Intent(this, CategoryActivity::class.java)
+
+        intent.putStringArrayListExtra("selectedFoodList", selectedFoodList)
+
+        // 다음 화면을 시작합니다.
+        startActivity(intent)
+    }
 }
+
+
