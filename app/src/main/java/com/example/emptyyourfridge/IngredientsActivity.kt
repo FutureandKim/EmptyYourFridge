@@ -12,7 +12,12 @@ import androidx.appcompat.app.AppCompatActivity
 class IngredientsActivity : AppCompatActivity() {
 
     //ingredients list
-    private val foodItems = arrayOf("당근", "감자", "양파", "마늘", "브로콜리", "고구마", "시금치", " ", "소고기", "돼지고기", "닭고기", " ", "우유", "치즈", "콩")
+    private val vegetableItems = arrayOf("당근", "감자", "양파", "마늘", "브로콜리", "고구마", "시금치", "콩나물") //야채
+    private val meatItems = arrayOf("소고기", "돼지고기", "닭고기") //고기
+    private val proteinItems = arrayOf("콩", "두부", "계란", "생선") //단백질
+    private val dairyItems = arrayOf("우유", "치즈") //유제품
+
+
     private val selectedFoodList = ArrayList<String>()
     private lateinit var selectedFoodsTextView: TextView
 
@@ -20,31 +25,59 @@ class IngredientsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ingredients)
 
-        val gridView: GridView = findViewById(R.id.ingredientsGridView)
+        val gridView1: GridView = findViewById(R.id.ingredientsGridView)
+        val gridView2: GridView = findViewById(R.id.ingredientsGridView2)
+        val gridView3: GridView = findViewById(R.id.ingredientsGridView3)
+        val gridView4: GridView = findViewById(R.id.ingredientsGridView4)
         selectedFoodsTextView = findViewById(R.id.selectedFoodsTextView)
 
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_multiple_choice, foodItems)
-        gridView.adapter = adapter
+        // Set up adapter for foodItems
+        val adapter1 = ArrayAdapter(this, android.R.layout.simple_list_item_multiple_choice, vegetableItems)
+        gridView1.adapter = adapter1
 
-        gridView.setOnItemClickListener { _, _, position, _ ->
-            val selectedFood = foodItems[position]
+        // Set up adapter for foodItems2
+        val adapter2 = ArrayAdapter(this, android.R.layout.simple_list_item_multiple_choice, meatItems)
+        gridView2.adapter = adapter2
 
-            if (gridView.isItemChecked(position)) {
-                // 선택한 음식 추가
-                selectedFoodList.add(selectedFood)
-            } else {
-                // 선택 해제한 음식 제거
-                selectedFoodList.remove(selectedFood)
-            }
+        val adapter3 = ArrayAdapter(this, android.R.layout.simple_list_item_multiple_choice, proteinItems)
+        gridView3.adapter = adapter3
 
-            updateSelectedFoodsText()
-            // 추가 동작
+        val adapter4 = ArrayAdapter(this, android.R.layout.simple_list_item_multiple_choice, dairyItems)
+        gridView4.adapter = adapter4
+
+        // Set click listener for foodItems
+        gridView1.setOnItemClickListener { _, _, position, _ ->
+            handleItemClick(vegetableItems[position])
+        }
+
+        // Set click listener for foodItems2
+        gridView2.setOnItemClickListener { _, _, position, _ ->
+            handleItemClick(meatItems[position])
+        }
+
+        gridView3.setOnItemClickListener { _, _, position, _ ->
+            handleItemClick(proteinItems[position])
+        }
+
+
+        gridView4.setOnItemClickListener { _, _, position, _ ->
+            handleItemClick(dairyItems[position])
         }
 
         val nextButton: Button = findViewById(R.id.nextButton)
         nextButton.setOnClickListener{
             moveToCategoryActivity()
         }
+    }
+
+    private fun handleItemClick(selectedFood: String) {
+        if (selectedFoodList.contains(selectedFood)) {
+            selectedFoodList.remove(selectedFood)
+        } else {
+            selectedFoodList.add(selectedFood)
+        }
+
+        updateSelectedFoodsText()
     }
 
     private fun updateSelectedFoodsText() {
@@ -54,13 +87,9 @@ class IngredientsActivity : AppCompatActivity() {
 
     private fun moveToCategoryActivity() {
         val intent = Intent(this, CategoryActivity::class.java)
-
         intent.putStringArrayListExtra("selectedFoodList", selectedFoodList)
-
-        // 다음 화면을 시작합니다.
         startActivity(intent)
     }
-
 }
 
 
