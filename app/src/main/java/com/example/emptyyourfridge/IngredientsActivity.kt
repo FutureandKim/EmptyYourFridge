@@ -12,9 +12,9 @@ import androidx.appcompat.app.AppCompatActivity
 class IngredientsActivity : AppCompatActivity() {
 
     //ingredients list
-    private val vegetableItems = arrayOf("당근", "감자", "양파", "마늘", "브로콜리", "고구마", "시금치", "콩나물") //야채
-    private val meatItems = arrayOf("소고기", "돼지고기", "닭고기") //고기
-    private val proteinItems = arrayOf("콩", "두부", "계란", "생선") //단백질
+    private val vegetableItems = arrayOf("감자", "고구마", "당근", "대파", "마늘", "브로콜리", "시금치", "양파", "콩나물") //야채
+    private val meatItems = arrayOf("닭고기", "돼지고기", "소고기") //고기
+    private val proteinItems = arrayOf("계란", "두부", "생선", "콩") //단백질
     private val dairyItems = arrayOf("우유", "치즈") //유제품
 
 
@@ -25,10 +25,10 @@ class IngredientsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ingredients)
 
-        val gridView1: GridView = findViewById(R.id.ingredientsGridView)
-        val gridView2: GridView = findViewById(R.id.ingredientsGridView2)
-        val gridView3: GridView = findViewById(R.id.ingredientsGridView3)
-        val gridView4: GridView = findViewById(R.id.ingredientsGridView4)
+        val gridView1: GridView = findViewById(R.id.vegetableGridView)
+        val gridView2: GridView = findViewById(R.id.meatGridView)
+        val gridView3: GridView = findViewById(R.id.proteinGridView)
+        val gridView4: GridView = findViewById(R.id.dairyGridView)
         selectedFoodsTextView = findViewById(R.id.selectedFoodsTextView)
 
         // Set up adapter for foodItems
