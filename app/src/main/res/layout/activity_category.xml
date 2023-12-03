@@ -6,4 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".CategoryActivity">
 
+    <TextView
+        android:id="@+id/selectedFoodTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Selected Food List: "
+        android:textSize="18sp"
+        tools:ignore="MissingConstraints" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
