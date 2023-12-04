@@ -12,8 +12,6 @@ class CategoryActivity : AppCompatActivity() {
 
         // get data by Intent
         val selectedFoodList = intent.getStringArrayListExtra("selectedFoodList")
-
-        // UI에서 데이터를 표시할 TextView
         val selectedFoodTextView = findViewById<TextView>(R.id.selectedFoodTextView)
 
         // 받아온 데이터를 TextView에 설정
