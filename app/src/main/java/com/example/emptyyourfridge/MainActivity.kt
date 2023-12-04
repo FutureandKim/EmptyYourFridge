@@ -14,8 +14,7 @@ class MainActivity : AppCompatActivity() {
         val goToIngredientsButton: Button = findViewById(R.id.goToIngredientsButton)
 
         goToIngredientsButton.setOnClickListener {
-            val intent = Intent(this@MainActivity, IngredientsActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this@MainActivity, IngredientsActivity::class.java))
         }
     }
 }
