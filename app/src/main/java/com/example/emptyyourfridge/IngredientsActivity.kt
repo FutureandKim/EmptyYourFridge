@@ -81,7 +81,7 @@ class IngredientsActivity : AppCompatActivity() {
     }
 
     private fun updateSelectedFoodsText() {
-        val selectedFoodsText = "냉장고 속 음식: ${selectedFoodList.joinToString(", ")}"
+        val selectedFoodsText = "선택한 식재료: ${selectedFoodList.joinToString(", ")}"
         selectedFoodsTextView.text = selectedFoodsText
     }
 

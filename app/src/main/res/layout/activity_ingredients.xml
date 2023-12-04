@@ -11,8 +11,8 @@
         android:id="@+id/selectedFoodsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="13dp"
         android:text="선택한 식재료:"
+        android:padding="13dp"
         android:textStyle="bold"
         tools:ignore="MissingConstraints" />
 
