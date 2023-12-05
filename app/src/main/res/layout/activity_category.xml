@@ -10,21 +10,22 @@
         android:id="@+id/selectedFoodTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="13dp"
-        android:text="선택한 식재료:"
+        android:paddingTop="60dp"
+        android:text="선택한 식재료"
         android:textStyle="bold"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="3dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/descriptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
         android:paddingLeft="13dp"
+        android:paddingTop="4dp"
         android:paddingBottom="5dp"
-        android:text="어떤 카테고리의 음식을 드시고 싶으신가요?"
+        android:text="을(를) 이용하여 어떤 종류의 음식을 드시고 싶으신가요?"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/selectedFoodTextView" />
@@ -46,8 +47,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
-        android:text="한식"
         android:backgroundTint="#848484"
+        android:text="한식"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/KoreanTextView"
         tools:ignore="MissingClass" />
@@ -109,7 +110,7 @@
         android:textSize="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button"
-        tools:ignore="MissingConstraints"/>
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button4"
@@ -132,7 +133,7 @@
         android:textSize="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2"
-        tools:ignore="MissingConstraints"/>
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button5"
@@ -155,7 +156,7 @@
         android:textSize="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button3"
-        tools:ignore="MissingConstraints"/>
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button6"
@@ -176,7 +177,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

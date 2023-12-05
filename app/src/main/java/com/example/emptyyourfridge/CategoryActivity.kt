@@ -13,24 +13,24 @@ class CategoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_category)
 
-        // get data by Intent
+        // ingredient
         val selectedFoodList = intent.getStringArrayListExtra("selectedFoodList")
         val selectedFoodTextView = findViewById<TextView>(R.id.selectedFoodTextView)
 
-        // 받아온 데이터를 TextView에 설정
+        // ingredient → TextView
         if (selectedFoodList != null) {
-            val foodListText = "선택한 식재료: ${selectedFoodList.joinToString(", ")}"
+            val foodListText = "${selectedFoodList.joinToString(", ")}"
             selectedFoodTextView.text = foodListText
         }
 
-        // button
+        // button click
         val buttonIds = listOf(R.id.button, R.id.button2, R.id.button3, R.id.button4, R.id.button5, R.id.button6)
         for (buttonId in buttonIds) {
             val button = findViewById<Button>(buttonId)
             button.setOnClickListener {
                 selectedButton?.setBackgroundColor(Color.parseColor("#848484"))
                 selectedButton = button
-                button.setBackgroundColor(Color.parseColor("#FE9A2E")) // 다른 색상 변경
+                button.setBackgroundColor(Color.parseColor("#FE9A2E"))
                 handleButtonClick(button)
             }
         }
