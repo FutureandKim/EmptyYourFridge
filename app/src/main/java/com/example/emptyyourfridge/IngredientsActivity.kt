@@ -12,14 +12,12 @@ import androidx.appcompat.app.AppCompatActivity
 class IngredientsActivity : AppCompatActivity() {
 
     //ingredients list
-    private val vegetableItems = arrayOf("감자", "고구마", "당근", "대파", "마늘", "브로콜리", "시금치", "양파", "콩나물") //야채
+    private val vegetableItems = arrayOf("감자", "고구마", "당근", "대파", "마늘", "브로콜리", "시금치", "새송이", "양파", "콩나물", "팽이버섯") //야채
     private val meatItems = arrayOf("닭고기", "돼지고기", "소고기") //고기
     private val proteinItems = arrayOf("계란", "두부", "생선", "콩") //단백질
     private val dairyItems = arrayOf("우유", "치즈") //유제품
 
-
-    private val selectedFoodList = ArrayList<String>()
-    private lateinit var selectedFoodsTextView: TextView
+    private lateinit var ingredientsTextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +27,7 @@ class IngredientsActivity : AppCompatActivity() {
         val gridView2: GridView = findViewById(R.id.meatGridView)
         val gridView3: GridView = findViewById(R.id.proteinGridView)
         val gridView4: GridView = findViewById(R.id.dairyGridView)
-        selectedFoodsTextView = findViewById(R.id.selectedFoodsTextView)
+        ingredientsTextView = findViewById(R.id.selectedFoodsTextView)
 
         // Set up adapter for foodItems
         val adapter1 = ArrayAdapter(this, android.R.layout.simple_list_item_multiple_choice, vegetableItems)
@@ -70,25 +68,23 @@ class IngredientsActivity : AppCompatActivity() {
         }
     }
 
-    private fun handleItemClick(selectedFood: String) {
-        if (selectedFoodList.contains(selectedFood)) {
-            selectedFoodList.remove(selectedFood)
+    private fun handleItemClick(ingredients: String) {
+        if (IngredientListClass.selectedIngredients().contains(ingredients)) {
+            IngredientListClass.removeIngredients(ingredients) // remove food already on the list
         } else {
-            selectedFoodList.add(selectedFood)
+            IngredientListClass.addIngredients(ingredients)
         }
-
-        updateSelectedFoodsText()
+        updateIngredients()
     }
 
-    private fun updateSelectedFoodsText() {
-        val selectedFoodsText = "선택한 식재료: ${selectedFoodList.joinToString(", ")}"
-        selectedFoodsTextView.text = selectedFoodsText
+
+    private fun updateIngredients() {
+        val ingredientsText = "선택한 식재료: ${IngredientListClass.selectedIngredients().joinToString(", ")}"
+        ingredientsTextView.text = ingredientsText
     }
 
     private fun moveToCategoryActivity() {
-        val intent = Intent(this, CategoryActivity::class.java)
-        intent.putStringArrayListExtra("selectedFoodList", selectedFoodList)
-        startActivity(intent)
+        startActivity(Intent(this, CategoryActivity::class.java))
     }
 }
 

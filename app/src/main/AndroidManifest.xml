@@ -13,6 +13,12 @@
         android:theme="@style/Theme.EmptyYourFridge"
         tools:targetApi="31">
         <activity
+            android:name=".MenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecipeActivity"
+            android:exported="false" />
+        <activity
             android:name=".CategoryActivity"
             android:exported="false" />
         <activity
