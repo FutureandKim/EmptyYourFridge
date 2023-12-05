@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 class IngredientsActivity : AppCompatActivity() {
 
     //ingredients list
-    private val vegetableItems = arrayOf("감자", "고구마", "당근", "대파", "마늘", "브로콜리", "시금치", "양파", "콩나물") //야채
+    private val vegetableItems = arrayOf("감자", "고구마", "당근", "대파", "마늘", "브로콜리", "시금치", "새송이", "양파", "콩나물", "팽이버섯") //야채
     private val meatItems = arrayOf("닭고기", "돼지고기", "소고기") //고기
     private val proteinItems = arrayOf("계란", "두부", "생선", "콩") //단백질
     private val dairyItems = arrayOf("우유", "치즈") //유제품
