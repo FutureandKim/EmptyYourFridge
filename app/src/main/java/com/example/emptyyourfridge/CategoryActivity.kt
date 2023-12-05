@@ -4,7 +4,6 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 
@@ -16,13 +15,11 @@ class CategoryActivity : AppCompatActivity() {
         setContentView(R.layout.activity_category)
 
         // ingredient
-        val selectedFoodList = intent.getStringArrayListExtra("selectedFoodList")
-        val selectedFoodTextView = findViewById<TextView>(R.id.selectedFoodTextView)
+        val ingredientsList = IngredientListClass.selectedIngredients()
+        val ingredientsTextView = findViewById<TextView>(R.id.ingredientsTextView)
 
-        // ingredient → TextView
-        if (selectedFoodList != null) {
-            val foodListText = "${selectedFoodList.joinToString(", ")}"
-            selectedFoodTextView.text = foodListText
+        if (ingredientsList.isNotEmpty()) {
+            ingredientsTextView.text = "${ingredientsList.joinToString(", ")}"
         }
 
         // button click
@@ -30,10 +27,7 @@ class CategoryActivity : AppCompatActivity() {
         for (buttonId in buttonIds) {
             val button = findViewById<Button>(buttonId)
             button.setOnClickListener {
-                selectedButton?.setBackgroundColor(Color.parseColor("#848484"))
-                selectedButton = button
-                button.setBackgroundColor(Color.parseColor("#FE9A2E"))
-                //handleButtonClick(button)
+                handleButtonClick(button)
             }
         }
 
@@ -44,19 +38,31 @@ class CategoryActivity : AppCompatActivity() {
     }
 
     private fun moveToMenuActivity() {
-        val intent = Intent(this, MenuActivity::class.java)
-
-        // 선택한 버튼의 텍스트를 Intent에 추가
-        val selectedButtonText = selectedButton?.text.toString()
-        intent.putExtra("selectedButtonText", selectedButtonText)
-
-
-        startActivity(intent)
+        startActivity(Intent(this, MenuActivity::class.java))
     }
 
     private fun handleButtonClick(button: Button) {
-        // 클릭한 버튼에 따른 추가적인 동작
+        if (selectedButton != null) {
+            // 이미 선택된 버튼이 있는 경우
+            selectedButton?.setBackgroundColor(Color.parseColor("#848484"))
+            IngredientListClass.removeIngredients(selectedButton?.text.toString()) // 이전 선택 해제
+        }
+
+        // 새로운 버튼 선택하고 리스트에 추가
+        selectedButton = button
+        button.setBackgroundColor(Color.parseColor("#FE9A2E"))
+        IngredientListClass.addIngredients(button.text.toString())
+
+        updateSelectedFoodsText()
     }
 
+    private fun updateSelectedFoodsText() {
+        val ingredientsList = IngredientListClass.selectedIngredients()
+        val ingredientsTextView = findViewById<TextView>(R.id.ingredientsTextView)
 
+        if (ingredientsList.isNotEmpty()) {
+            ingredientsTextView.text = "${ingredientsList.joinToString(", ")}"
+        }
+    }
 }
+

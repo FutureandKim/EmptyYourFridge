@@ -7,7 +7,7 @@
     tools:context=".CategoryActivity">
 
     <TextView
-        android:id="@+id/selectedFoodTextView"
+        android:id="@+id/ingredientsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="60dp"
@@ -28,7 +28,7 @@
         android:text="을(를) 이용하여 어떤 종류의 음식을 드시고 싶으신가요?"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectedFoodTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/ingredientsTextView" />
 
     <TextView
         android:id="@+id/KoreanTextView"

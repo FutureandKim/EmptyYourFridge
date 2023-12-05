@@ -2,7 +2,6 @@ package com.example.emptyyourfridge
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.TextView
 
 class MenuActivity : AppCompatActivity() {
@@ -10,10 +9,11 @@ class MenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
 
-        // Intent에서 값 추출
-        val selectedButtonText = intent.getStringExtra("selectedButtonText")
-        // 화면에 출력
-        val resultTextView = findViewById<TextView>(R.id.selectedFoodTextViewInMenu)
-        resultTextView.text = "$selectedButtonText"
+        val ingredientsList = IngredientListClass.selectedIngredients()
+        val ingredientsTextView = findViewById<TextView>(R.id.ingredientTextView)
+        ingredientsTextView.text = ingredientsList.subList(0, ingredientsList.size - 1).joinToString(", ") // 마지막 요소(음식 종류) 제외
+
+        val categoryTextView = findViewById<TextView>(R.id.catTextView)
+        categoryTextView.text = "${IngredientListClass.selectedIngredients().last()}"
     }
 }

@@ -6,46 +6,53 @@
     android:layout_height="match_parent"
     tools:context=".MenuActivity">
 
+
     <TextView
-        android:id="@+id/selectedFoodTextView"
+        android:id="@+id/ingredientTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="60dp"
         android:text="선택한 식재료"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.342"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="0dp" />
 
     <TextView
-        android:id="@+id/descriptionTextView"
+        android:id="@+id/description1TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingLeft="13dp"
-        android:paddingTop="4dp"
-        android:paddingBottom="5dp"
-        android:text="선택한 음식 목록과 버튼의 텍스트"
+        android:paddingTop="60dp"
+        android:text="(으)로 요리한"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.582"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectedFoodTextView" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="0dp" />
 
     <TextView
-        android:id="@+id/selectedButtonTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descriptionTextView" />
-
-    <TextView
-        android:id="@+id/selectedFoodTextViewInMenu"
+        android:id="@+id/catTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:text="카테고리"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.395"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectedButtonTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/ingredientTextView" />
+
+    <TextView
+        android:id="@+id/description2TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="레시피입니다"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.609"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description1TextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
