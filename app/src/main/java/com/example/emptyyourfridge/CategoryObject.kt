@@ -5,10 +5,10 @@ object CategoryObject {
     fun selectedCategory(): List<String> {
         return MenuList.toList()
     }
-    fun addCategory(food: String) {
-        MenuList.add(food)
+    fun addCategory(category: String) {
+        MenuList.add(category)
     }
-    fun removeCategory(food: String) {
-        MenuList.remove(food)
+    fun removeCategory(category: String) {
+        MenuList.remove(category)
     }
 }

@@ -5,10 +5,10 @@ object IngredientsObject {
     fun selectedIngredients(): List<String> {
         return IngredientsList.toList()
     }
-    fun addIngredients(food: String) {
-        IngredientsList.add(food)
+    fun addIngredients(ingredients: String) {
+        IngredientsList.add(ingredients)
     }
-    fun removeIngredients(food: String) {
-        IngredientsList.remove(food)
+    fun removeIngredients(ingredients: String) {
+        IngredientsList.remove(ingredients)
     }
 }
