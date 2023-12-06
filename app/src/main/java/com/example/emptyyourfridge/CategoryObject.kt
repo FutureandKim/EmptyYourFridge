@@ -1,6 +1,6 @@
 package com.example.emptyyourfridge
 
-object CategoryListClass {
+object CategoryObject {
     private val MenuList = ArrayList<String>()
     fun selectedCategory(): List<String> {
         return MenuList.toList()

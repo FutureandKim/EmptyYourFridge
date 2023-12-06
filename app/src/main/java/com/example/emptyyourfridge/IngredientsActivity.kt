@@ -68,16 +68,16 @@ class IngredientsActivity : AppCompatActivity() {
     }
 
     private fun handleItemClick(ingredients: String) {
-        if (IngredientListClass.selectedIngredients().contains(ingredients)) {
-            IngredientListClass.removeIngredients(ingredients) // remove food already on the list
+        if (IngredientsObject.selectedIngredients().contains(ingredients)) {
+            IngredientsObject.removeIngredients(ingredients) // remove food already on the list
         } else {
-            IngredientListClass.addIngredients(ingredients)
+            IngredientsObject.addIngredients(ingredients)
         }
         updateIngredients()
     }
 
     private fun updateIngredients() {
-        ingredientsTextView.text = "선택한 식재료: ${IngredientListClass.selectedIngredients().joinToString(", ")}"
+        ingredientsTextView.text = "선택한 식재료: ${IngredientsObject.selectedIngredients().joinToString(", ")}"
     }
 
     private fun moveToCategoryActivity() {
