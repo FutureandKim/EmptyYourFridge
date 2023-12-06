@@ -10,9 +10,9 @@ class MenuActivity : AppCompatActivity() {
         setContentView(R.layout.activity_menu)
 
         val ingredientsTextView = findViewById<TextView>(R.id.ingredientTextView)
-        ingredientsTextView.text = IngredientListClass.selectedIngredients().joinToString(", ")
+        ingredientsTextView.text = IngredientsObject.selectedIngredients().joinToString(", ")
 
         val categoryTextView = findViewById<TextView>(R.id.catTextView)
-        categoryTextView.text = CategoryListClass.selectedCategory().toString()
+        categoryTextView.text = CategoryObject.selectedCategory().toString()
     }
 }

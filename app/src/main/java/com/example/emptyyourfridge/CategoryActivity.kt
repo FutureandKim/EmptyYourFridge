@@ -16,7 +16,7 @@ class CategoryActivity : AppCompatActivity() {
 
         // print ingredientList
         val ingredientsTextView = findViewById<TextView>(R.id.ingredientsTextView)
-        ingredientsTextView.text = IngredientListClass.selectedIngredients().joinToString(", ")
+        ingredientsTextView.text = IngredientsObject.selectedIngredients().joinToString(", ")
 
 
         // button click
@@ -42,13 +42,13 @@ class CategoryActivity : AppCompatActivity() {
         if (selectedButton != null) {
             // 이미 선택된 버튼이 있는 경우
             selectedButton?.setBackgroundColor(Color.parseColor("#848484"))
-            CategoryListClass.removeCategory(selectedButton?.text.toString()) //이전 선택 해제
+            CategoryObject.removeCategory(selectedButton?.text.toString()) //이전 선택 해제
         }
 
         // 새로운 버튼 선택하고 리스트에 추가
         selectedButton = button
         button.setBackgroundColor(Color.parseColor("#FE9A2E"))
-        CategoryListClass.addCategory(button.text.toString())
+        CategoryObject.addCategory(button.text.toString())
 
     }
 

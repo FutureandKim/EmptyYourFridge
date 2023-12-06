@@ -1,6 +1,6 @@
 package com.example.emptyyourfridge
 
-object IngredientListClass {
+object IngredientsObject {
     private val IngredientsList = ArrayList<String>()
     fun selectedIngredients(): List<String> {
         return IngredientsList.toList()
