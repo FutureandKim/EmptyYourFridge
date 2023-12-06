@@ -14,13 +14,10 @@ class CategoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_category)
 
-        // ingredient
-        val ingredientsList = IngredientListClass.selectedIngredients()
+        // print ingredientList
         val ingredientsTextView = findViewById<TextView>(R.id.ingredientsTextView)
+        ingredientsTextView.text = IngredientListClass.selectedIngredients().joinToString(", ")
 
-        if (ingredientsList.isNotEmpty()) {
-            ingredientsTextView.text = "${ingredientsList.joinToString(", ")}"
-        }
 
         // button click
         val buttonIds = listOf(R.id.button, R.id.button2, R.id.button3, R.id.button4, R.id.button5, R.id.button6)
@@ -32,7 +29,7 @@ class CategoryActivity : AppCompatActivity() {
         }
 
         val nextButton: Button = findViewById(R.id.nextButton)
-        nextButton.setOnClickListener{
+        nextButton.setOnClickListener {
             moveToMenuActivity()
         }
     }
@@ -45,24 +42,14 @@ class CategoryActivity : AppCompatActivity() {
         if (selectedButton != null) {
             // 이미 선택된 버튼이 있는 경우
             selectedButton?.setBackgroundColor(Color.parseColor("#848484"))
-            IngredientListClass.removeIngredients(selectedButton?.text.toString()) // 이전 선택 해제
+            CategoryListClass.removeCategory(selectedButton?.text.toString()) //이전 선택 해제
         }
 
         // 새로운 버튼 선택하고 리스트에 추가
         selectedButton = button
         button.setBackgroundColor(Color.parseColor("#FE9A2E"))
-        IngredientListClass.addIngredients(button.text.toString())
+        CategoryListClass.addCategory(button.text.toString())
 
-        updateSelectedFoodsText()
     }
 
-    private fun updateSelectedFoodsText() {
-        val ingredientsList = IngredientListClass.selectedIngredients()
-        val ingredientsTextView = findViewById<TextView>(R.id.ingredientsTextView)
-
-        if (ingredientsList.isNotEmpty()) {
-            ingredientsTextView.text = "${ingredientsList.joinToString(", ")}"
-        }
-    }
 }
-
