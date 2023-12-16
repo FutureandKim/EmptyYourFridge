@@ -6,49 +6,79 @@
     android:layout_height="match_parent"
     tools:context=".MenuActivity">
 
-
-    <TextView
-        android:id="@+id/ingredientTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="60dp"
-        android:text="식재료 목록"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="0dp" />
-
-    <TextView
-        android:id="@+id/description1TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:text="해당 식재료로 만들 수 있는"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ingredientTextView" />
-
     <TextView
         android:id="@+id/catTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="아시아"
+        android:paddingTop="60dp"
+        android:text="food"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.422"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/description1TextView" />
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/description2TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="요리입니다"
+        android:paddingTop="60dp"
+        android:text="made with"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.569"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/description1TextView" />
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/ingredientTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:text="ingredients"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/catTextView"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/recipeNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="레시피 이름"
+        app:layout_constraintTop_toBottomOf="@+id/ingredientTextView"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/catTextView"
+        android:layout_marginTop="16dp"
+        android:hint="Enter Ingredient"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@+id/recipeNameEditText"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Save"
+        app:layout_constraintTop_toBottomOf="@+id/editText"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/viewRecipesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Recipes"
+        android:layout_below="@id/addButton"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/addButton"
+        tools:ignore="MissingConstraints"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
