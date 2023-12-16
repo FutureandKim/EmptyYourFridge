@@ -7,40 +7,38 @@
     tools:context=".CategoryActivity">
 
     <TextView
-        android:id="@+id/ingredientsTextView"
+        android:id="@+id/descriptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="60dp"
-        android:text="선택한 식재료"
-        android:textStyle="bold"
+        android:text="What kind of food do you like to eat with "
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/descriptionTextView"
+        android:id="@+id/ingredientsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingLeft="13dp"
         android:paddingTop="4dp"
-        android:paddingBottom="5dp"
-        android:text="을(를) 이용하여 어떤 종류의 음식을 드시고 싶으신가요?"
+        android:text="선택한 식재료"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ingredientsTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/descriptionTextView" />
 
     <TextView
-        android:id="@+id/KoreanTextView"
+        android:id="@+id/riceTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginTop="48dp"
         android:padding="13dp"
-        android:text="🍲"
+        android:text="🍚"
         android:textSize="50dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descriptionTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/ingredientsTextView" />
 
     <Button
         android:id="@+id/button"
@@ -48,22 +46,22 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:backgroundTint="#848484"
-        android:text="한식"
+        android:text="Rice"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/KoreanTextView"
+        app:layout_constraintTop_toBottomOf="@+id/riceTextView"
         tools:ignore="MissingClass" />
 
     <TextView
-        android:id="@+id/japaneseTextView"
+        android:id="@+id/noodleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
         android:layout_marginTop="48dp"
         android:padding="13dp"
-        android:text="🍣"
+        android:text="🍜"
         android:textSize="50dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descriptionTextView"
+        app:layout_constraintTop_toBottomOf="@+id/ingredientsTextView"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -72,21 +70,21 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
         android:backgroundTint="#848484"
-        android:text="일식"
+        android:text="Noodle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/KoreanTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/noodleTextView" />
 
     <TextView
-        android:id="@+id/ChineseTextView"
+        android:id="@+id/soupTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="276dp"
         android:layout_marginTop="48dp"
         android:padding="13dp"
-        android:text="🍤"
+        android:text="🍲"
         android:textSize="50dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descriptionTextView"
+        app:layout_constraintTop_toBottomOf="@+id/ingredientsTextView"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -95,18 +93,18 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="276dp"
         android:backgroundTint="#848484"
-        android:text="중식"
+        android:text="Soup"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/japaneseTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/soupTextView" />
 
     <TextView
-        android:id="@+id/westernTextView"
+        android:id="@+id/sideTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="40dp"
         android:padding="13dp"
-        android:text="🍝"
+        android:text="🍤"
         android:textSize="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button"
@@ -118,18 +116,18 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:backgroundTint="#848484"
-        android:text="양식"
+        android:text="Side"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/westernTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/sideTextView" />
 
     <TextView
-        android:id="@+id/asianTextView"
+        android:id="@+id/BreadTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="40dp"
         android:padding="13dp"
-        android:text="🍜"
+        android:text="🥨"
         android:textSize="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2"
@@ -141,18 +139,18 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
         android:backgroundTint="#848484"
-        android:text="아시아"
+        android:text="Bread"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/asianTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/BreadTextView" />
 
     <TextView
-        android:id="@+id/bunsikTextView"
+        android:id="@+id/dessertTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="276dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="40dp"
         android:padding="13dp"
-        android:text="🧈"
+        android:text="🍡"
         android:textSize="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button3"
@@ -164,9 +162,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="276dp"
         android:backgroundTint="#848484"
-        android:text="반찬"
+        android:text="Dessert"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bunsikTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/dessertTextView" />
 
     <Button
         android:id="@+id/nextButton"

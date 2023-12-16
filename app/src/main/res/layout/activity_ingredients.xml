@@ -11,8 +11,8 @@
         android:id="@+id/selectedFoodsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="선택한 식재료:"
-        android:padding="13dp"
+        android:text="CHOICE:"
+        android:padding="12dp"
         android:textStyle="bold"
         tools:ignore="MissingConstraints" />
 
@@ -20,9 +20,9 @@
         android:id="@+id/descriptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingLeft="13dp"
+        android:paddingLeft="7dp"
         android:paddingBottom="5dp"
-        android:text="냉장고 속 식재료를 선택해주세요\n(카테고리별로 스크롤을 내리면 더 많은 식재료를 볼 수 있어요)"
+        android:text="Select the ingredients.\n(If you scroll down to each category, there are more ingredients)"
         app:layout_constraintTop_toBottomOf="@+id/selectedFoodsTextView"
         tools:ignore="MissingConstraints"/>
 
@@ -30,18 +30,19 @@
         android:id="@+id/vegetableTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingTop="10dp"
         android:paddingLeft="10dp"
-        android:text="🥦 채소류"
+        android:text="🥦 VEGETABLES"
         android:textStyle="bold"
-        android:layout_marginTop="10dp"
         app:layout_constraintTop_toBottomOf="@+id/descriptionTextView"
         tools:ignore="MissingConstraints" />
 
     <GridView
         android:id="@+id/vegetableGridView"
         android:layout_width="0dp"
-        android:layout_height="200dp"
+        android:layout_height="180dp"
         android:layout_weight="1"
+        android:layout_marginTop="5dp"
         android:choiceMode="multipleChoice"
         android:columnWidth="100dp"
         android:numColumns="2"
@@ -54,9 +55,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
-        android:text="🥩 고기류"
+        android:text="🥩 MEAT"
         android:textStyle="bold"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         app:layout_constraintTop_toBottomOf="@+id/vegetableGridView"
         tools:ignore="MissingConstraints" />
 
@@ -77,7 +78,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
-        android:text="🥚 단백질류"
+        android:text="🥚 EGG &amp; FISH"
         android:textStyle="bold"
         android:layout_marginTop="10dp"
         app:layout_constraintTop_toBottomOf="@+id/meatGridView"
@@ -100,7 +101,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
-        android:text="🥛 유제품류"
+        android:text="🥛 DAIRY"
         android:textStyle="bold"
         android:layout_marginTop="10dp"
         app:layout_constraintTop_toBottomOf="@+id/proteinGridView"

@@ -18,7 +18,6 @@ class CategoryActivity : AppCompatActivity() {
         val ingredientsTextView = findViewById<TextView>(R.id.ingredientsTextView)
         ingredientsTextView.text = IngredientsObject.selectedIngredients().joinToString(", ")
 
-
         // button click
         val buttonIds = listOf(R.id.button, R.id.button2, R.id.button3, R.id.button4, R.id.button5, R.id.button6)
         for (buttonId in buttonIds) {

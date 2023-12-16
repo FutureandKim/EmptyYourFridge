@@ -11,10 +11,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        CategoryObject.removeAllCategories()
+        IngredientsObject.removeAllIngredients()
+
         val goToIngredientsButton: Button = findViewById(R.id.goToIngredientsButton)
+        val goToRecipeButton: Button = findViewById(R.id.goToRecipeButton)
 
         goToIngredientsButton.setOnClickListener {
             startActivity(Intent(this@MainActivity, IngredientsActivity::class.java))
+        }
+
+        goToRecipeButton.setOnClickListener{
+            startActivity(Intent(this@MainActivity, RecipeActivity::class.java))
         }
     }
 }
