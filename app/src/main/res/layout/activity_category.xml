@@ -46,7 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:backgroundTint="#848484"
-        android:text="밥"
+        android:text="Rice"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/riceTextView"
         tools:ignore="MissingClass" />
@@ -70,7 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
         android:backgroundTint="#848484"
-        android:text="면"
+        android:text="Noodle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/noodleTextView" />
 
@@ -93,7 +93,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="276dp"
         android:backgroundTint="#848484"
-        android:text="국"
+        android:text="Soup"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/soupTextView" />
 
@@ -116,7 +116,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:backgroundTint="#848484"
-        android:text="반찬"
+        android:text="Side"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sideTextView" />
 
@@ -139,7 +139,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
         android:backgroundTint="#848484"
-        android:text="빵"
+        android:text="Bread"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/BreadTextView" />
 
@@ -162,7 +162,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="276dp"
         android:backgroundTint="#848484"
-        android:text="후식"
+        android:text="Dessert"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dessertTextView" />
 

@@ -10,23 +10,18 @@ import androidx.appcompat.app.AppCompatActivity
 
 
 class MenuActivity : AppCompatActivity() {
-    private lateinit var ingredientsTextView: TextView
-    private lateinit var categoryTextView: TextView
-    private lateinit var recipeNameEditText: EditText // 이 부분을 추가하세요
-    private lateinit var recipeEditText: EditText
-    private lateinit var saveButton: Button
-    private lateinit var viewRecipesButton: Button
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
 
-        ingredientsTextView = findViewById(R.id.ingredientTextView)
-        categoryTextView = findViewById(R.id.catTextView)
-        recipeNameEditText = findViewById(R.id.recipeNameEditText)
-        recipeEditText = findViewById(R.id.editText)
-        saveButton = findViewById(R.id.addButton)
-        viewRecipesButton = findViewById(R.id.viewRecipesButton)
+        val ingredientsTextView: TextView = findViewById(R.id.ingredientTextView)
+        val categoryTextView: TextView = findViewById(R.id.catTextView)
+        val recipeNameEditText: EditText = findViewById(R.id.recipeNameEditText)
+        val recipeEditText: EditText = findViewById(R.id.editText)
+        val saveButton:Button = findViewById(R.id.addButton)
+        val viewRecipesButton:Button = findViewById(R.id.viewRecipesButton)
 
         ingredientsTextView.text = IngredientsObject.selectedIngredients().joinToString(", ")
         categoryTextView.text = CategoryObject.selectedCategory().toString()
@@ -34,14 +29,16 @@ class MenuActivity : AppCompatActivity() {
         saveButton.setOnClickListener {
             val recipeName = recipeNameEditText.text.toString()
             val recipeText = recipeEditText.text.toString()
+            val category = categoryTextView.text.toString()
+            val ingredients = IngredientsObject.selectedIngredients()
 
             if (recipeName.isNotBlank() && recipeText.isNotBlank()) {
-                RecipeObject.addRecipe(recipeName, recipeText)
-                showToast("레시피가 저장되었습니다!")
+                RecipeObject.addRecipe(recipeName, recipeText, category, ingredients)
+                showToast("Recipe saved!")
                 recipeNameEditText.text.clear()
                 recipeEditText.text.clear()
             } else {
-                showToast("레시피 이름과 텍스트를 모두 입력한 후 저장하세요.")
+                showToast("Please write both recipe name and text before saving.")
             }
         }
 

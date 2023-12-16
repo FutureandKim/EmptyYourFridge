@@ -44,9 +44,10 @@
 
     <EditText
         android:id="@+id/recipeNameEditText"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="레시피 이름"
+        android:layout_marginTop="50dp"
+        android:hint="Recipe Name"
         app:layout_constraintTop_toBottomOf="@+id/ingredientTextView"
         tools:ignore="MissingConstraints" />
 
@@ -56,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/catTextView"
         android:layout_marginTop="16dp"
-        android:hint="Enter Ingredient"
+        android:hint="How to cook"
         android:inputType="text"
         app:layout_constraintTop_toBottomOf="@+id/recipeNameEditText"
         tools:ignore="MissingConstraints" />
@@ -65,8 +66,11 @@
         android:id="@+id/addButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="292dp"
         android:text="Save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText"
         tools:ignore="MissingConstraints" />
 
@@ -74,11 +78,14 @@
         android:id="@+id/viewRecipesButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="View Recipes"
         android:layout_below="@id/addButton"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="5dp"
+        android:text="Recipe List"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addButton"
-        tools:ignore="MissingConstraints"/>
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

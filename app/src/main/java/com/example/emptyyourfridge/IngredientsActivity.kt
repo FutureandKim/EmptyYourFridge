@@ -12,10 +12,10 @@ import androidx.appcompat.app.AppCompatActivity
 class IngredientsActivity : AppCompatActivity() {
 
     //ingredients list
-    private val vegetableItems = arrayOf("감자", "고구마", "당근", "대파", "두부", "마늘", "브로콜리", "시금치", "새송이", "양파", "콩", "콩나물", "팽이버섯")
-    private val meatItems = arrayOf("닭고기", "돼지고기", "소고기")
-    private val proteinItems = arrayOf("계란", "고등어", "갈치", "참치", "생선")
-    private val dairyItems = arrayOf("우유", "치즈")
+    private val vegetableItems = arrayOf("Avocado", "Bean sprouts", "Broccoli", "Cabbage", "Carrot", "Cucumber", "Garlic", "Green onion", "Mushroom", "Onion", "Pepper", "Potato", "Pumpkin", "Soybean", "Spinach", "Sweet potato", "Tofu", "Tomato")
+    private val meatItems = arrayOf("Beef", "Chicken", "Pork")
+    private val proteinItems = arrayOf("Egg", "Salmon", "Shrimp", "Squid", "Tuna")
+    private val dairyItems = arrayOf("Milk", "Cheddar", "Mozzarella")
 
     private lateinit var ingredientsTextView: TextView
 
@@ -29,11 +29,9 @@ class IngredientsActivity : AppCompatActivity() {
         val gridView4: GridView = findViewById(R.id.dairyGridView)
         ingredientsTextView = findViewById(R.id.selectedFoodsTextView)
 
-        // Set up adapter for foodItems
         val adapter1 = ArrayAdapter(this, android.R.layout.simple_list_item_multiple_choice, vegetableItems)
         gridView1.adapter = adapter1
 
-        // Set up adapter for foodItems2
         val adapter2 = ArrayAdapter(this, android.R.layout.simple_list_item_multiple_choice, meatItems)
         gridView2.adapter = adapter2
 
@@ -43,7 +41,7 @@ class IngredientsActivity : AppCompatActivity() {
         val adapter4 = ArrayAdapter(this, android.R.layout.simple_list_item_multiple_choice, dairyItems)
         gridView4.adapter = adapter4
 
-        // Set click listener for foodItems
+
         gridView1.setOnItemClickListener { _, _, position, _ ->
             handleItemClick(vegetableItems[position])
         }

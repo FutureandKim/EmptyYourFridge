@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:paddingLeft="7dp"
         android:paddingBottom="5dp"
-        android:text="Select the ingredients in your refrigerator.\n(If you scroll down to each category, there are more ingredients)"
+        android:text="Select the ingredients.\n(If you scroll down to each category, there are more ingredients)"
         app:layout_constraintTop_toBottomOf="@+id/selectedFoodsTextView"
         tools:ignore="MissingConstraints"/>
 

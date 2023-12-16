@@ -1,6 +1,8 @@
 package com.example.emptyyourfridge
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -10,13 +12,24 @@ class RecipeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recipe)
 
-        // Assuming you have a TextView with the id "recipeTextView" in your layout
         val recipeTextView = findViewById<TextView>(R.id.recipeTextView)
 
-        // Get all recipes from RecipeObject
         val recipes = RecipeObject.getAllRecipes()
 
-        // Display recipes in the TextView
-        recipeTextView.text = recipes.joinToString("\n")
+        val recipeText = recipes.joinToString("\n\n") {
+            "<${it.name}>\n" +
+            "- Category: ${it.category}\n" +
+            "- Ingredients: ${it.ingredients.joinToString(", ")}\n" +
+            "- Recipe: \n ${it.text}\n"
+        }
+        recipeTextView.text = recipeText
+
+        val nextButton: Button = findViewById(R.id.mainButton)
+        nextButton.setOnClickListener {
+            moveToCategoryActivity()
+        }
+    }
+    private fun moveToCategoryActivity() {
+        startActivity(Intent(this, MainActivity::class.java))
     }
 }

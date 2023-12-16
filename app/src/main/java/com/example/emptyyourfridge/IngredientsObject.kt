@@ -11,4 +11,8 @@ object IngredientsObject {
     fun removeIngredients(ingredients: String) {
         IngredientsList.remove(ingredients)
     }
+    fun removeAllIngredients() {
+        IngredientsList.clear()
+    }
+
 }
